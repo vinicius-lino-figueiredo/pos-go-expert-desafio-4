@@ -36,3 +36,9 @@ Para realizar a conversão de Celsius para Fahrenheit, utilize aseguinte fórmul
  aplicação.
 - Deploy realizado no Google Cloud Run (free tier) e o endereço ativo para ser
   acessado.
+
+---
+
+**URL da aplicação publicada:**
+
+https://desafio-4-763797664904.southamerica-east1.run.app/temperature/{cep}

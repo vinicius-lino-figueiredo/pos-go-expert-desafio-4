@@ -17,8 +17,8 @@ import (
 const addr = ":8000"
 
 func main() {
-	ag := viacep.NewAddressGetter()
-	tg := wttr.NewTemperatureGetter()
+	ag := viacep.NewAddressGetter(http.DefaultClient)
+	tg := wttr.NewTemperatureGetter(http.DefaultClient)
 
 	http.DefaultClient.Transport = &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},

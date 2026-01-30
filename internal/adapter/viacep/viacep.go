@@ -25,14 +25,12 @@ func (e ErrStatusCode) Error() string {
 
 // ViaCEP TODO
 type ViaCEP struct {
-	cl http.Client
+	cl *http.Client
 }
 
 // NewAddressGetter returns a new implementation of [domain.AddressGetter].
-func NewAddressGetter() domain.AddressGetter {
-	return &ViaCEP{
-		cl: *http.DefaultClient,
-	}
+func NewAddressGetter(cl *http.Client) domain.AddressGetter {
+	return &ViaCEP{cl: cl}
 }
 
 // GetAddress implements [domain.AddressGetter].

@@ -34,10 +34,8 @@ type Wttr struct {
 }
 
 // NewTemperatureGetter TODO
-func NewTemperatureGetter() domain.TemperatureGetter {
-	return &Wttr{
-		cl: http.DefaultClient,
-	}
+func NewTemperatureGetter(cl *http.Client) domain.TemperatureGetter {
+	return &Wttr{cl: cl}
 }
 
 // GetTemperature implements [domain.TemperatureGetter].
